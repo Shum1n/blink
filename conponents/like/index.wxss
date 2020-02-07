@@ -1,0 +1,27 @@
+/* conponents/like/index.wxss */
+.container{
+    /* 设置喜欢次数样式，第一步以flex */
+    /* 设置为flex只是消除了其中元素item 的块属性，但容器本身还是块，此时占据一行（整个屏幕的 
+       需要，让元素变成 自适应 inline-flex
+    */
+
+    display: inline-flex;
+    flex-direction: row;
+    /* 增加内边距，消除数字被遮挡 */
+    padding: 10rpx;
+
+}
+.container image{
+    width: 32rpx;
+    height: 28rpx;
+}
+.container text{
+    font-size: 24rpx;
+    color: #bbb;
+
+    position: relative;
+    bottom: 4px;
+    left: 9px;
+    /* 数字原本就有边距，去掉数字上下的留白，使得数字更加靠上*/
+    line-height: 24rpx
+}
