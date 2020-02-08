@@ -12,17 +12,17 @@ class HTTP{
         if(!params.method){
             params.method = 'GET'
         }
-        var reqTask = wx.request({
+        wx.request({
             url: config.api_base_url+params.url,
             header: {'content-type':'application/json',appkey:config.appkey},
-            data: config.data,
-            method: config.method,
+            data: params.data,
+            method: params.method,
             dataType: 'json',
             responseType: 'text',
             success: (res)=>{
-                let code = res.statusCode+''
+                let code = res.statusCode.toString()
                 if(code.startsWith('2')){
-                    params.success(res.data)
+                    params.success && params.success(res.data)
 
                 }else{
                     // 异常处理

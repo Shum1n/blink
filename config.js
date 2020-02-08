@@ -1,6 +1,6 @@
 const config ={
     api_base_url : 'http://bl.7yue.pro/v1/'
-    ,appkey : 'oeGzAKG8jwo0MoJ'
+    ,appkey : 'oeGzAKG8jwo0MoJR'
 }
 
 // 输出的方式有两种，一种是统一在下方通过 export{}。

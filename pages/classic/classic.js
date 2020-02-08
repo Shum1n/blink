@@ -1,8 +1,12 @@
 // pages/classic/classic.js
 // 引入工具类,一定要使用相对路径
 // 写的是根据文件名称导入，不是类名。
-import {HTTP} from '../../utils/http.js'
-let http = new HTTP();
+
+import {ClassicModel} from '../../models/classic.js'
+import { LikeModel } from '../../models/like.js'
+let classicModel = new ClassicModel()
+let likeModel = new LikeModel()
+
 Page({
 
   /**
@@ -17,13 +21,12 @@ Page({
    */
   onLoad: function (options) {
     // 使用工具类
-    http.request({
-      url:'classic/latest'
-      ,method: 'GET'
-      ,success:function(res){
-        console.log(res)
-      }
-
+    // 接收异步函数的调用结果，使用回调函数
+    // 使用回调函数，剥夺了return 的能力
+    classicModel.getLatest((res)=>{
+        this.setData({
+          classic:res
+        })
     })
     // shift +alt + a
     /* wx.request({
@@ -40,6 +43,17 @@ Page({
       complete: ()=>{}
     }); */
 
+  },
+
+  // 自定义like 事件
+  onLike:function (event) {
+    console.log(event)
+    let behavior = event.detail.behavior
+    likeModel.like(behavior
+      // 回调中设置
+      ,this.data.classic.id
+      ,this.data.classic.type
+    )
   },
 
   /**

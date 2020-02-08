@@ -33,7 +33,13 @@ Component({
       this.setData({
         like:!like
         ,count:count
-      })
+      });
+
+      // 自定义事件
+      // 发起，激活一个自定义事件
+      let behavior = this.properties.like?'like':'cancel';
+      this.triggerEvent('like',{behavior:behavior},{});
+      console.log(1)
     }
   }
 })
