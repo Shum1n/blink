@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 100rpx;
+    align-items: center;
+    /* 将点选与期刊分开两边 */
+    justify-content: space-between;
+    border-top: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+
+}
+
+.eposide{
+    margin-left: 20rpx;   
+    margin-top: 4rpx;
+}
+
+.like{
+    margin-top: 6rpx;
+}

@@ -1,0 +1,50 @@
+/* conponents/eposide/index.wxss */
+/* wx 样式中不使用id选择器，在组件的使用中不允许 */
+
+/* 
+1. 最外层的容器高度根据，内层 index 数字进行确定
+
+*/
+.container{
+    height: 60rpx;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.index-container{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.plain{
+    font-style: 32rpx;
+}
+
+.index{
+    font-size: 60rpx;
+    line-height: 60rpx;
+    /* font-weight: 800; */
+    margin-right: 14rpx;
+}
+
+.line{
+    height: 44rpx;
+    margin-right: 14rpx;
+    border-left: 1px solid black;
+}
+
+.data-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rpx;
+}
+
+.month{
+    font-size: 24rpx;
+    line-height: 24rpx;
+}
+
+.year{
+    font-style: 20rpx;
+}

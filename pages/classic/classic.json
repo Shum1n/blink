@@ -2,5 +2,6 @@
   "usingComponents": {
     "v-like":"../../conponents/like/index"
     ,"v-movie":"../../conponents/classic/movie/index"
+    ,"v-eposide":"../../conponents/eposide/index"
   }
 }
