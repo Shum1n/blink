@@ -58,8 +58,16 @@ Page({
   },
 
   onPrevious:function(event){
+    this._updateClassic('previous')
+  },
+
+  onNext:function(event){
+    this._updateClassic('next')
+  },
+
+  _updateClassic:function(nextOrPrev){
     let index = this.data.classic.index
-    classicModel.getPrevious(index,(res)=>{
+    classicModel.getClassic(index,nextOrPrev,(res)=>{
       this.setData({
         classic : res
         ,first  : classicModel.isFirst(res.index)
