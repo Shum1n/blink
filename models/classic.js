@@ -14,6 +14,8 @@ class ClassicModel extends HTTP{
             ,success:(res)=>{
                 sCallback(res)
                 this._setLatestIndex(res.index)
+                // 放到缓存
+                wx.setStorageSync(this._getKey(res.index),res)
             }
         })
     }
@@ -29,12 +31,18 @@ class ClassicModel extends HTTP{
     }
 
     getClassic(index,url,sCallback){
-        this.request({
+        // 根据路径判断所查找的key 值
+        // 若是获取前一个页面。则 index+1
+        let key = url == 'next'?this._getKey(index+1):this._getKey(index-1)
+        let classic = wx.getStorageSync(key)
+        // key 值不存在
+        !classic ?this.request({
             url:`classic/${index}/${url}`
             ,success:(res)=>{
+                wx.setStorageSync(this._getKey(res.index),res)
                 sCallback(res)
             }
-        })
+        }):sCallback(classic) // key值存在，直接调用回调函数
     }
 
     isFirst(index){
@@ -54,6 +62,10 @@ class ClassicModel extends HTTP{
     // 读取小程序缓存
     _getLatestIndex(){
         return wx.getStorageSync('latest');
+    }
+
+    _getKey(index){
+        return `classic-${index}`
     }
 }
 
