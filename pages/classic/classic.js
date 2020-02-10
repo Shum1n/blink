@@ -13,7 +13,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    classic:null
+    ,first:false
+    ,latest:true
   },
 
   /**
@@ -47,13 +49,23 @@ Page({
 
   // 自定义like 事件
   onLike:function (event) {
-    console.log(event)
     let behavior = event.detail.behavior
     likeModel.like(behavior
       // 回调中设置
       ,this.data.classic.id
       ,this.data.classic.type
     )
+  },
+
+  onPrevious:function(event){
+    let index = this.data.classic.index
+    classicModel.getPrevious(index,(res)=>{
+      this.setData({
+        classic : res
+        ,first  : classicModel.isFirst(res.index)
+        ,latest : classicModel.isLatest(res.index)
+      })
+    })
   },
 
   /**
