@@ -16,6 +16,8 @@ Page({
     classic:null
     ,first:false
     ,latest:true
+    ,likeStatus:false
+    ,likeCount:0
   },
 
   /**
@@ -27,7 +29,10 @@ Page({
     // 使用回调函数，剥夺了return 的能力
     classicModel.getLatest((res)=>{
         this.setData({
+          // ...res 扩展运算符
           classic:res
+          ,likeStatus:res.like_status
+          ,likeCount:res.fav_nums
         })
     })
     // shift +alt + a
@@ -68,10 +73,20 @@ Page({
   _updateClassic:function(nextOrPrev){
     let index = this.data.classic.index
     classicModel.getClassic(index,nextOrPrev,(res)=>{
+      this._getLikeStatus(res.id,res.type)
       this.setData({
         classic : res
         ,first  : classicModel.isFirst(res.index)
         ,latest : classicModel.isLatest(res.index)
+      })
+    })
+  },
+
+  _getLikeStatus:function(artId,category){
+    likeModel.getClassicLikeStatus(artId,category,(res)=>{
+      this.setData({
+        likeCount:res.fav_nums
+        ,likeStatus:res.like_status
       })
     })
   },
