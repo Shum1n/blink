@@ -1,1 +1,48 @@
-@import "../common.wxss";
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.classic-img{
+  width: 422rpx;
+  height: 422rpx;
+  margin-top: 60rpx;
+  /* 方形图片设置成圆形 */
+  border-radius: 50%;
+}
+
+.player-img{
+  width: 120rpx;
+  height: 120rpx;
+  /* 使得位于音乐封面图片中间 */
+  position: relative;
+  bottom: 270rpx;
+}
+
+.tag{
+  width: 44rpx;
+  height: 128rpx;
+  position: relative;
+  bottom: 160rpx;
+  right: 310rpx;
+}
+/* 音乐封面旋转效果 */
+.rotation {
+  -webkit-transform: rotate(360deg);
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
