@@ -5,6 +5,6 @@
     </view>
     <v-movie hidden="{{classic.type != 100 }}" img="{{classic.image}}" content="{{classic.content}}" />
     <v-music hidden="{{classic.type != 200 }}" img="{{classic.image}}" content="{{classic.content}}" />
-    <!-- <v-essay hidden="{{classic.type != 300 }}" img="{{classic.image}}" content="{{classic.content}}" /> -->
+    <v-essay hidden="{{classic.type != 300 }}" img="{{classic.image}}" content="{{classic.content}}" />
     <v-naiv class="naiv" bind:left="onNext" bind:right="onPrevious" title="{{classic.title}}" first="{{first}}" latest="{{latest}}" />
 </view>
