@@ -11,7 +11,7 @@ class HTTP{
     // 重写方法，明确参数列表。不需要回调函数
     // 解构参数列表
     request({url,data={},method='GET'}){
-        new Promise((resolve,reject)=>{
+        return new Promise((resolve,reject)=>{
             this. _request(url,resolve,reject,data,method)
         })
     }
@@ -49,8 +49,9 @@ class HTTP{
     // 表示一个私有方法
     // 没有给code ，返回默认错误提示信息
     _show_error(error_code=1){
+        const tip = tips[error_code]
         wx.showToast({
-            title:tips[error_code]
+            title:tip?tip:tips[1]
             ,icon:'none'
             ,duration:2000
         })

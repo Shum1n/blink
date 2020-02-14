@@ -1,2 +1,1 @@
-<!--pages/books/books.wxml-->
-<text>pages/books/books.wxml</text>
+<v-book book="{{books[0]}}"></v-book>

@@ -4,7 +4,11 @@ class BookModel extends HTTP{
 
     getHotList(){
         // 返回 Promise 对象
-        return super.request('classic/hot_list')
+        return this.request({url:'book/hot_list'})
+    }
+
+    getMyBookCount(){
+        return this.request({url:'book/favor/count'})
     }
 }
 

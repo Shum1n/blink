@@ -10,8 +10,7 @@ Page({
   data: {
     // promise 解决回调地狱、return
     // 解决多个异步合并
-    
-
+    books:[]
   },
 
   /**
@@ -19,33 +18,12 @@ Page({
    */
   onLoad: function (options) {
 
-    // 如何使用promise
-    // Promise 是一个对象，不是函数
-    // 可以类比成 一个灰 class
-    // 对象可以保存状态，除了闭包函数之外（可以保存状态）。函数(function)是马上返回结果的
-    // 回调函数本质上也是函数，并不能保存状态
-
-    // 1。new Promise ,可以接收两个参数 resolve,reject
-    const promise = new Promise((resolve,reject)=>{
-      // 2.将需要异步执行的代码写在箭头函数中
-      // 2.1 promise 有三种状态 pending fulfilled rejected
-      // - pending 进行中：new Promis() 就算作 进行中
-      // - fulfilled 已成功，rejected 已失败
-      // 当 Promise 状态变为已成功/ 已失败 时，此时Promise 状态凝固，将不能被修改为其他状态
-      // 小程度获取系统信息的函数
-      wx.getSystemInfo({
-        success: res=> resolve(res),
-        fail: err=> reject(err)
-      });
+    bookModel.getHotList().then(res=>{
+      this.setData({
+        books:res
+      })
     })
-
-    // 3.获取 Promise 异步调用的结果
-    // 3.1 then 方法接收两个结果，第一个为成功，第二个失败。
-    // 总结：Promise 用对象的方式，保存异步调用的结果
-    promise.then(res=>console.log(res),error=>console.log(error))
-
-
-
+    console.log(this.data.books)
   },
 
   /**
