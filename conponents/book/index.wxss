@@ -1,1 +1,60 @@
-/* conponents/book/index.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  /* 让子元素相较于父元素 */
+  position: relative;
+  width: 240rpx;
+  height: 360rpx;
+  margin-top: 30rpx;
+  /* 阴影效果 */
+  box-shadow: 2px 2px 3px #e3e3e3;
+}
+
+.container image{
+  width: 100%;
+  height: 100%;
+  /* 图片圆角 */
+  border-radius: 2px;
+}
+
+.description{
+  display: flex;
+  flex-direction: column;
+  width: 216rpx;
+  font-size: 24rpx;
+  /* 以父元素为基准，
+  当父元素 container，position属性不是 static（默认值） 时生效。*/
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  padding: 5rpx 10rpx 8rpx 15rpx;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.title {
+  margin-top: 10rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.author {
+  font-size: 20rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.foot {
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footer {
+  color: #666666;
+}

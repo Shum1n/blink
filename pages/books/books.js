@@ -23,7 +23,6 @@ Page({
         books:res
       })
     })
-    console.log(this.data.books)
   },
 
   /**
