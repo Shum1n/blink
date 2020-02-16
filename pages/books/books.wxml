@@ -7,7 +7,7 @@
 <view class="container">
     <view class="header">
         <view class="box">
-            <image></image>
+            <image src="/images/book/tip.png"></image>
             <text>{搜索图书}</text>
         </view>
         <view class="sub-container">
