@@ -4,14 +4,38 @@
 </block> -->
 
 
-<view class="container">
+<!-- <view class="container">
     <view class="header">
         <view class="box">
             <image src="/images/book/tip.png"></image>
-            <text>{搜索图书}</text>
+            <text>搜索图书</text>
         </view>
         <view class="sub-container">
-                <image class="head-img"></image>
+            <image class="head-img" src="/images/book/quality.png" />
+        </view>
+    </view>
+</view> -->
+<view wx:if="{{!searching}}" class="container">
+    <view class="header">
+        <view class='box' bind:tap="onSearching">
+            <image src="/images/icon/search.png" />
+            <text>搜索书籍</text>
+        </view>
+    </view>
+    <view class="sub-container">
+        <image class="head-img" src="/images/book/quality.png" />
+        <view class="books-container">
+        <!-- wx:key 怎么填写
+            当 wx:for 所遍历的类型是 Object 时，
+            key 满足：不重复（当然使用12123 也是可以的，不起作用，仅是消除警告）且是数字 或者 字符串时可以使用
+            使用 直接 用 item 的属性。不需要{{}} 。也不需要加上 item.id 。
+            直接使用属性。
+
+            如果所遍历的元素 wx:for="{{}}" 本身就是数学或者 字符串时，可以使用 *this,即 wx:key="*this"
+         -->
+            <block wx:key="id" wx:for="{{books}}">
+                <v-book book="{{item}}" />
+            </block>
         </view>
     </view>
 </view>

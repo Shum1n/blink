@@ -1,0 +1,11 @@
+<!-- 让tag-class 样式可以（不一定成功）覆盖 container 样式 -->
+<view class="container tag-class">
+  <slot name="before"></slot>
+  <text>{{text}}</text>
+  <!-- <text>{{num}}</text> -->
+  <!-- 组件的外部需要 一个text 时，就传递一个text 进来
+    空插槽不显示
+    插槽的行为与 properties 非常类似，都是从外部向组件的内部传递数据。或者标签
+   -->
+  <slot name="after"></slot>
+</view>

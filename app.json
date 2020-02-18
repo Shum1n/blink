@@ -2,7 +2,8 @@
   "pages": [
     "pages/classic/classic",
     "pages/books/books",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/book-detail/book-detail"
   ],
   "window": {
     "navigationBarTitleText": "林间有风",
@@ -36,6 +37,5 @@
       }
     ]
   },
-  
   "sitemapLocation": "sitemap40.json"
 }
