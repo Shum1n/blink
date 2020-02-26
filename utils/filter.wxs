@@ -1,0 +1,18 @@
+// wxs 与 javaScript 不同，有自己独立的运行环境。
+// WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。
+// 其中 const 是 javaScript ES6 定义的，所以不能使用
+// 不能用 const let??
+// WXS 语法类似 ES5
+var format = function (text) {
+    if(!text){
+        return 
+    }
+    var reg = getRegExp('\\\\n','g')
+    return text.replace(reg,'\n&nbsp;&nbsp;')
+}
+
+// wxs 在小程序中相当于一个模块，但是与 ES6的模块不相同
+// 通过该方式，就可以在bookDetail.wxml 中调用该函数
+module.exports = {
+    format:format
+};
