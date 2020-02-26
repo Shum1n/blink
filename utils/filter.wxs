@@ -11,8 +11,14 @@ var format = function (text) {
     return text.replace(reg,'\n&nbsp;&nbsp;')
 }
 
+var limit = function(array,end,start = 0){
+    // 截取数组前几个元素
+    return array.slice(start,end);
+}
+
 // wxs 在小程序中相当于一个模块，但是与 ES6的模块不相同
 // 通过该方式，就可以在bookDetail.wxml 中调用该函数
 module.exports = {
     format:format
+    ,limit:limit
 };
