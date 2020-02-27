@@ -1,5 +1,5 @@
 <!-- 让tag-class 样式可以（不一定成功）覆盖 container 样式 -->
-<view class="container tag-class">
+<view bind:tap="onTap" class="container tag-class">
   <slot name="before"></slot>
   <text>{{text}}</text>
   <!-- <text>{{num}}</text> -->
