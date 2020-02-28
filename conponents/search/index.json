@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "v-tag":"/conponents/tag/index"
+    ,"v-book":"/conponents/book/index"
+  }
+}

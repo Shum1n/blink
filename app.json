@@ -4,7 +4,8 @@
     "pages/books/books",
     "pages/my/my",
     "pages/book-detail/book-detail",
-    "conponents/mask/index"
+    "conponents/mask/index",
+    "conponents/search/index"
   ],
   "window": {
     "navigationBarTitleText": "林间有风",

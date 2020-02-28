@@ -1,6 +1,8 @@
 // pages/books/books.js
 import {BookModel} from '../../models/book.js'
+import { KeywordModel } from '../../models/keyword.js'
 let bookModel = new BookModel()
+let keywordModel = new KeywordModel()
 
 Page({
 
@@ -11,6 +13,7 @@ Page({
     // promise 解决回调地狱、return
     // 解决多个异步合并
     books:[]
+    ,searching:false
   },
 
   /**
@@ -22,6 +25,18 @@ Page({
       this.setData({
         books:res
       })
+    })
+  },
+
+  onSearching(event){
+    this.setData({
+      searching:true
+    })
+  },
+
+  onCancel(event){
+    this.setData({
+      searching:false
     })
   },
 

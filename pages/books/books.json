@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "v-book":"/conponents/book/index"
+    ,"v-search":"/conponents/search/index"
   }
 }

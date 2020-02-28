@@ -39,3 +39,5 @@
         </view>
     </view>
 </view>
+
+<v-search bind:cancel="onCancel" wx:if="{{searching}}"/>
