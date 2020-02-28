@@ -1,6 +1,10 @@
 // pages/books/books.js
-import {BookModel} from '../../models/book.js'
-import { KeywordModel } from '../../models/keyword.js'
+import {
+  BookModel
+} from '../../models/book.js'
+import {
+  KeywordModel
+} from '../../models/keyword.js'
 let bookModel = new BookModel()
 let keywordModel = new KeywordModel()
 
@@ -12,8 +16,9 @@ Page({
   data: {
     // promise 解决回调地狱、return
     // 解决多个异步合并
-    books:[]
-    ,searching:false
+    books: [],
+    searching: false,
+    more: false
   },
 
   /**
@@ -21,24 +26,26 @@ Page({
    */
   onLoad: function (options) {
 
-    bookModel.getHotList().then(res=>{
+    bookModel.getHotList().then(res => {
       this.setData({
-        books:res
+        books: res
       })
     })
   },
 
-  onSearching(event){
+  onSearching(event) {
     this.setData({
-      searching:true
+      searching: true
     })
   },
 
-  onCancel(event){
+  onCancel(event) {
     this.setData({
-      searching:false
+      searching: false
     })
   },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -79,7 +86,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      // more 改为number 类型,修改为随机数 random()
+      more: !this.data.more
+    })
   },
 
   /**
