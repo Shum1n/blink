@@ -1,7 +1,7 @@
 /* conponents/like/index.wxss */
 .container{
     /* 设置喜欢次数样式，第一步以flex */
-    /* 设置为flex只是消除了其中元素item 的块属性，但容器本身还是块，此时占据一行（整个屏幕的 
+    /* 设置为flex只是消除了其中元素item 的块属性，但容器本身还是块，此时占据一行（整个屏幕的
        需要，让元素变成 自适应 inline-flex
     */
 
@@ -9,6 +9,8 @@
     flex-direction: row;
     /* 增加内边距，消除数字被遮挡 */
     padding: 10rpx;
+    width: 90rpx;
+
 
 }
 .container image{
