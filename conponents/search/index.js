@@ -55,9 +55,6 @@ Component({
       if(this.data.loading){
         return
       }
-      if(){
-
-      }
       this.data.loading = true
       bookModel.search(this.data.dataArray.length,this.data.q).then(res=>{
         // 当数据还没有返回回来的时候,再次向下滑动??
