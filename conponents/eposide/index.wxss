@@ -1,7 +1,7 @@
 /* conponents/eposide/index.wxss */
 /* wx 样式中不使用id选择器，在组件的使用中不允许 */
 
-/* 
+/*
 1. 最外层的容器高度根据，内层 index 数字进行确定
 
 */
@@ -18,7 +18,7 @@
 }
 
 .plain{
-    font-style: 32rpx;
+    font-size: 32rpx;
 }
 
 .index{
@@ -46,5 +46,5 @@
 }
 
 .year{
-    font-style: 20rpx;
+    font-size: 20rpx;
 }
